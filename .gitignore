@@ -5,4 +5,4 @@
 bin/
 pkg/
 src/app/vendor/
-app/lib/dependency_injection.go
+src/app/lib/dependency_injection.go
