@@ -1,0 +1,8 @@
+package: app
+import:
+- package: github.com/labstack/echo
+  version: ~3.0
+  subpackages:
+  - engine/standard
+- package: github.com/fgrosse/goldi
+  version: ~1.0

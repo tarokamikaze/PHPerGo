@@ -1,0 +1,9 @@
+types:
+    injected:
+        package: app/service
+        type: Injected
+    service:
+        package: app/service
+        type: ServiceImpl
+        arguments:
+            - "@injected"

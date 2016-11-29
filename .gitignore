@@ -1,0 +1,8 @@
+.settings/
+.project
+.idea/
+.envrc
+bin/
+pkg/
+src/app/vendor/
+app/lib/dependency_injection.go
