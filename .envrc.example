@@ -1,1 +1,2 @@
 export GOPATH=`pwd`
+export TEST_PARAM=test

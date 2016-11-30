@@ -1,25 +1,16 @@
 package main
 
 import (
-	"github.com/fgrosse/goldi"
 	"app/lib"
-	"github.com/fgrosse/goldi/validation"
 	"app/service"
 	"fmt"
 )
 
-func main() {
-	registry := goldi.NewTypeRegistry()
-	lib.RegisterTypes(registry)
+var envPrefix string = "TEST_"
 
-	config := map[string]interface{}{
-		"some_parameter": "Hello World",
-		"timeout":        42.7,
-	}
-	container := goldi.NewContainer(registry, config)
-	validator := validation.NewContainerValidator()
-	validator.MustValidate(container)
+func main() {
+	container := lib.Bootstrap(envPrefix)
 	service := container.MustGet("service").(service.Service)
 
-	fmt.Println(service.Call("test!"))
+	fmt.Println(service.Call(container.Config["PARAM"].(string) + "!"))
 }
